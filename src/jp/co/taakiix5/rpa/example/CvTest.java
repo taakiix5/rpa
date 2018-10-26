@@ -97,7 +97,7 @@ public class CvTest {
 	* イメージ→バイト列に変換
 	* @param img イメージデータ
 	* @param format フォーマット名
-	* @return バイト列
+	* @return バイト列あ
 	*/
 	public static byte[] getBytesFromImage(BufferedImage img, String format) throws IOException {
 
