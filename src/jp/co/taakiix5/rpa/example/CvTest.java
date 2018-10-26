@@ -91,6 +91,7 @@ public class CvTest {
         Mat mat = new Mat(image.getHeight(), image.getWidth(), CvType.CV_8UC3);
         mat.put(0, 0, data);
         return mat;
+
     }
 
 	/**
