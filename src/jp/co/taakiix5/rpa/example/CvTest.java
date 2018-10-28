@@ -7,14 +7,13 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.event.InputEvent;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
 import org.opencv.core.Core;
 import org.opencv.core.Core.MinMaxLocResult;
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
@@ -28,15 +27,9 @@ public class CvTest {
 		Robot robot = new Robot();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		BufferedImage img = robot.createScreenCapture(new Rectangle(screenSize));
-		// BufferedImageToMat
-		Mat im = bi2Mat(img);
-		/*
-		Mat im = new Mat(img.getHeight(), img.getWidth(), CvType.CV_8UC3);
-		byte[] data = ((DataBufferByte) img.getRaster().getDataBuffer()).getData();
-		im.put(0, 0, data);
-		*/
+		ImageIO.write(img, "jpg", new File("test3.jpg"));
 
-		// Mat im = Imgcodecs.imread("test.jpg");					// 入力画像の取得
+		Mat im = Imgcodecs.imread("test3.jpg");					// 入力画像の取得
 		Mat tmp = Imgcodecs.imread("tmp.jpg");					// テンプレート画像の取得
 		Mat result = new Mat();
 
@@ -82,31 +75,4 @@ public class CvTest {
 		Imgcodecs.imwrite("test2.jpg", im);					// 画像の出力
 	}
 
-	public static Mat bi2Mat(BufferedImage image) throws IOException {
-        // byte[] data = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
-
-        // byte[] data = image.getRaster().getDataBuffer().getData();
-        byte[] data = getBytesFromImage( image, null );
-        System.out.println("bufferedimage:" + data.length);
-        Mat mat = new Mat(image.getHeight(), image.getWidth(), CvType.CV_8UC3);
-        mat.put(0, 0, data);
-        return mat;
-
-    }
-
-	/**
-	* イメージ→バイト列に変換
-	* @param img イメージデータ
-	* @param format フォーマット名
-	* @return バイト列あ
-	*/
-	public static byte[] getBytesFromImage(BufferedImage img, String format) throws IOException {
-
-		if (format == null) {
-			format = "png";
-		}
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		ImageIO.write(img, format, baos);
-		return baos.toByteArray();
-	}
 }
