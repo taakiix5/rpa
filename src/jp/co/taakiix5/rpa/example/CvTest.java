@@ -29,7 +29,6 @@ public class CvTest {
 		BufferedImage img = robot.createScreenCapture(new Rectangle(screenSize));
 		ImageIO.write(img, "jpg", new File("test3.jpg"));
 
-
 		Mat im = Imgcodecs.imread("test3.jpg");					// 入力画像の取得
 		Mat tmp = Imgcodecs.imread("tmp.jpg");					// テンプレート画像の取得
 		Mat result = new Mat();
