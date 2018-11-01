@@ -40,9 +40,9 @@ import org.jnativehook.mouse.NativeMouseWheelListener;;
  * @see GlobalScreenwewerwer
  * @see NativeKeyListener
  */
-public class NativeHookDemo implements NativeKeyListener, NativeMouseInputListener, NativeMouseWheelListener{
+public class RecTest implements NativeKeyListener, NativeMouseInputListener, NativeMouseWheelListener{
 	/** The Constant serialVersionUID. */
-	private static NativeRecords record = new NativeRecords();
+	private static NativeRecord record = new NativeRecord();
 
 	/**
 	 * Instantiates a new native hook demo.
@@ -64,7 +64,7 @@ public class NativeHookDemo implements NativeKeyListener, NativeMouseInputListen
         }
 
         //キー・リスナを登録
-        NativeHookDemo demo = new NativeHookDemo();
+        RecTest demo = new RecTest();
         GlobalScreen.addNativeKeyListener(demo);
         GlobalScreen.addNativeMouseListener(demo);
         GlobalScreen.addNativeMouseMotionListener(demo);
@@ -149,9 +149,9 @@ public class NativeHookDemo implements NativeKeyListener, NativeMouseInputListen
 
 }
 
-class NativeRecord {
+class NativeRecords {
 
-	public NativeRecord() {
+	public NativeRecords() {
 
 	}
 

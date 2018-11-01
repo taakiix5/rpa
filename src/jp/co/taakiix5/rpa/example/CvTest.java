@@ -27,9 +27,9 @@ public class CvTest {
 		Robot robot = new Robot();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		BufferedImage img = robot.createScreenCapture(new Rectangle(screenSize));
-		ImageIO.write(img, "jpg", new File("test3.jpg"));
+		ImageIO.write(img, "bmp", new File("test3.bmp"));
 
-		Mat im = Imgcodecs.imread("test3.jpg");					// 入力画像の取得
+		Mat im = Imgcodecs.imread("test3.bmp");					// 入力画像の取得
 		Mat tmp = Imgcodecs.imread("tmp.jpg");					// テンプレート画像の取得
 		Mat result = new Mat();
 
@@ -72,7 +72,7 @@ public class CvTest {
 		}
 
 
-		Imgcodecs.imwrite("test2.jpg", im);					// 画像の出力
+		Imgcodecs.imwrite("test2.bmp", im);					// 画像の出力
 	}
 
 }
