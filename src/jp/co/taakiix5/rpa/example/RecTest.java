@@ -42,7 +42,7 @@ import org.jnativehook.mouse.NativeMouseWheelListener;;
  */
 public class RecTest implements NativeKeyListener, NativeMouseInputListener, NativeMouseWheelListener{
 	/** The Constant serialVersionUID. */
-	private static NativeRecord record = new NativeRecord();
+	private static NativeRecords record = new NativeRecords();
 
 	/**
 	 * Instantiates a new native hook demo.
@@ -178,7 +178,10 @@ class NativeRecords {
 			break;
 
 		case NativeMouseEvent.NATIVE_MOUSE_MOVED:
-			System.out.println("NATIVE_MOUSE_MOVED");
+			System.out.print("NATIVE_MOUSE_MOVED:");
+			System.out.print(e.getX() + ",");
+			System.out.print(e.getY());
+			System.out.println("");
 			break;
 
 		case NativeMouseEvent.NATIVE_MOUSE_DRAGGED:

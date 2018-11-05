@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/jnativehook-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jnativehook-2.1.0.jar" sourcepath="C:/Users/user/AppData/Local/Temp/.org.sf.feeling.decompiler1541111949590/source/jnativehook-2.1.0-sources.jar"/>
 	<classpathentry kind="lib" path="lib/opencv/opencv-342.jar">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="rpa/lib/opencv/x64"/>
