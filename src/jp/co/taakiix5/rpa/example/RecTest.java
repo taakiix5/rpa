@@ -185,7 +185,10 @@ class NativeRecords {
 			break;
 
 		case NativeMouseEvent.NATIVE_MOUSE_DRAGGED:
-			System.out.println("NATIVE_MOUSE_DRAGGED");
+			System.out.println("NATIVE_MOUSE_DRAGGED:");
+			System.out.print(e.getX() + ",");
+			System.out.print(e.getY());
+			System.out.println("");
 			break;
 
 		case NativeMouseEvent.NATIVE_MOUSE_WHEEL:
